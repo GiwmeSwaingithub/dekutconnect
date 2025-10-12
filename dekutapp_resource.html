@@ -8,9 +8,9 @@
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <style>
     :root {
-      --brand: #0B5FFF;
-      --brand-light: #4D8EFF;
-      --brand-dark: #0040CC;
+      --brand: #10b981;
+      --brand-light: #34d399;
+      --brand-dark: #059669;
       --muted: #6b7280;
       --muted-light: #9CA3AF;
       --bg: #0f172a;
@@ -137,7 +137,7 @@
       color: white;
       font-size: 28px;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(11, 95, 255, 0.4);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
       z-index: 100;
       display: flex;
       align-items: center;
@@ -147,7 +147,7 @@
     
     .quick-add-btn:hover {
       transform: scale(1.1) rotate(90deg);
-      box-shadow: 0 6px 30px rgba(11, 95, 255, 0.6);
+      box-shadow: 0 6px 30px rgba(16, 185, 129, 0.6);
     }
     
     /* Search */
@@ -175,7 +175,7 @@
     .search-container input:focus {
       outline: none;
       border-color: var(--brand);
-      box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.1);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     
     .search-container button {
@@ -278,7 +278,7 @@
     .card:hover {
       background: var(--card-hover);
       border-color: var(--brand);
-      box-shadow: 0 8px 24px rgba(11, 95, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
     }
     
     .card h3 {
@@ -297,7 +297,7 @@
     }
     
     .badge {
-      background: rgba(11, 95, 255, 0.15);
+      background: rgba(16, 185, 129, 0.15);
       color: var(--brand-light);
       padding: 4px 10px;
       border-radius: 12px;
@@ -511,7 +511,7 @@
     .form-group textarea:focus {
       outline: none;
       border-color: var(--brand);
-      box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.1);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     
     .form-group textarea {
@@ -531,12 +531,12 @@
     
     .upload-area:hover {
       border-color: var(--brand);
-      background: rgba(11, 95, 255, 0.05);
+      background: rgba(16, 185, 129, 0.05);
     }
     
     .upload-area.active {
       border-color: var(--brand);
-      background: rgba(11, 95, 255, 0.1);
+      background: rgba(16, 185, 129, 0.1);
     }
     
     .upload-icon {
@@ -668,6 +668,51 @@
     html {
       scroll-behavior: smooth;
     }
+    
+    /* Resource Type Filter */
+    .resource-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 8px 14px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .filter-btn.active {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: white;
+    }
+    
+    /* Course Resources View */
+    .course-resources {
+      margin-top: 20px;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .back-btn:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -701,10 +746,8 @@
     <!-- Tabs -->
     <div class="tabs" id="tabsContainer">
       <button class="tab active" data-tab="schools">Schools</button>
-      <button class="tab" data-tab="programs">Programs</button>
       <button class="tab" data-tab="resources">Resources</button>
-      <button class="tab" data-tab="elearning">E-Learning</button>
-      <button class="tab" data-tab="events">Events</button>
+      <button class="tab" data-tab="elearning">MORE...</button>
     </div>
 
     <!-- Schools Section -->
@@ -715,20 +758,37 @@
       <div class="grid" id="schoolsGrid"></div>
     </div>
 
-    <!-- Programs Section -->
-    <div class="section" id="programsSection" style="display: none;">
-      <div class="section-header">
-        <h2>All Programs</h2>
-      </div>
-      <div class="grid" id="programsGrid"></div>
-    </div>
-
     <!-- Resources Section -->
     <div class="section" id="resourcesSection" style="display: none;">
       <div class="section-header">
         <h2>Resource Library</h2>
       </div>
+      <div class="resource-filters" id="resourceFilters">
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="notes">📝 Notes</button>
+        <button class="filter-btn" data-type="slides">📊 Slides</button>
+        <button class="filter-btn" data-type="past-papers">📄 Past Papers</button>
+        <button class="filter-btn" data-type="books">📚 Books</button>
+        <button class="filter-btn" data-type="other">📎 Other</button>
+      </div>
       <div class="resource-list" id="resourcesList"></div>
+    </div>
+
+    <!-- Course Resources Section -->
+    <div class="section" id="courseResourcesSection" style="display: none;">
+      <a class="back-btn" id="backToResourcesBtn">← Back to Resources</a>
+      <div class="section-header">
+        <h2 id="courseResourcesTitle">Course Resources</h2>
+      </div>
+      <div class="resource-filters" id="courseResourceFilters">
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="notes">📝 Notes</button>
+        <button class="filter-btn" data-type="slides">📊 Slides</button>
+        <button class="filter-btn" data-type="past-papers">📄 Past Papers</button>
+        <button class="filter-btn" data-type="books">📚 Books</button>
+        <button class="filter-btn" data-type="other">📎 Other</button>
+      </div>
+      <div class="resource-list" id="courseResourcesList"></div>
     </div>
 
     <!-- E-Learning Section -->
@@ -748,18 +808,38 @@
           <h3>Digital Library</h3>
           <p>E-books, journals, research papers and academic databases</p>
           <div style="margin-top: 12px;">
-            <a href="https://www.dkut.ac.ke/library/index.php/e-resources/#gsc.tab=0" target="_blank" class="btn btn-small">Browse</a>
+            <a href="https://library.dkut.ac.ke" target="_blank" class="btn btn-small">Browse</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Plagiarism Checker</h3>
+          <p>Check your work for plagiarism using Grammarly</p>
+          <div style="margin-top: 12px;">
+            <a href="https://www.grammarly.com/plagiarism-checker" target="_blank" class="btn btn-small">Check Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Google Scholar</h3>
+          <p>Access academic papers and research materials</p>
+          <div style="margin-top: 12px;">
+            <a href="https://scholar.google.com" target="_blank" class="btn btn-small">Search</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>ResearchGate</h3>
+          <p>Connect with researchers and access publications</p>
+          <div style="margin-top: 12px;">
+            <a href="https://www.researchgate.net" target="_blank" class="btn btn-small">Explore</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Khan Academy</h3>
+          <p>Free online courses and learning resources</p>
+          <div style="margin-top: 12px;">
+            <a href="https://www.khanacademy.org" target="_blank" class="btn btn-small">Learn</a>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Events Section -->
-    <div class="section" id="eventsSection" style="display: none;">
-      <div class="section-header">
-        <h2>Upcoming Events</h2>
-      </div>
-      <div class="grid" id="eventsGrid"></div>
     </div>
 
     <footer>
@@ -869,13 +949,13 @@
             'MSc in Electrical and Electronic Engineering',
             'MSc in Mechanical Engineering',
             'MSc in Biomedical Engineering',
-            'Bachelor of Science in Electrical and Electronic Engineering',
-            'Bachelor of Science in Civil Engineering',
-            'Bachelor of Science in Mechatronic Engineering',
-            'Bachelor of Science in Mechanical Engineering',
-            'Bachelor of Science in Chemical Engineering',
-            'Bachelor of Education in Technology (Electrical)',
-            'Bachelor of Technology in Building Construction'
+            'BSc in Electrical and Electronic Engineering',
+            'BSc in Civil Engineering',
+            'BSc in Mechatronic Engineering',
+            'BSc in Mechanical Engineering',
+            'BSc in Chemical Engineering',
+            'BEd in Technology (Electrical)',
+            'BSc in Building Construction'
           ]
         },
         {
@@ -886,13 +966,13 @@
             'PhD in Business Administration & Management',
             'Master of Business Administration',
             'Master in Innovation and Entrepreneurship',
-            'Master of Science in Business Analytics',
+            'MSc in Business Analytics',
             'Master in Supply Chain Management',
             'Master in Economics',
             'Master in Project Management',
-            'Bachelor of Purchasing and Supplies Management',
-            'Bachelor of Commerce',
-            'Bachelor of Business Administration',
+            'BSc in Purchasing and Supplies Management',
+            'BSc in Commerce',
+            'BSc in Business Administration',
             'Diploma in Business Administration'
           ]
         },
@@ -903,9 +983,9 @@
           programs: [
             'PhD in Computer Science',
             'MSc in Computer Science',
-            'Bachelor of Science in Computer Science',
-            'Bachelor of Business Information Technology',
-            'Bachelor of Science in Information Technology',
+            'BSc in Computer Science',
+            'BSc in Business Information Technology',
+            'BSc in Information Technology',
             'Certificate in Fundamentals of ICT'
           ]
         },
@@ -914,8 +994,8 @@
           name: 'School of Nursing',
           icon: '⚕️',
           programs: [
-            'Bachelor of Science in Nursing (Direct Entry)',
-            'Bachelor of Science in Nursing (Upgrading)'
+            'BSc in Nursing (Direct Entry)',
+            'BSc in Nursing (Upgrading)'
           ]
         },
         {
@@ -928,39 +1008,75 @@
             'MSc in Leather Technology',
             'MSc in Chemistry',
             'MSc in Industrial Biochemistry',
-            'Bachelor of Science in Industrial Chemistry',
-            'Bachelor of Science in Leather Technology',
-            'Bachelor of Science in Actuarial Science',
-            'Bachelor of Science in Mathematics and Modeling',
-            'Bachelor of Science in Polymer Chemistry',
+            'BSc in Industrial Chemistry',
+            'BSc in Leather Technology',
+            'BSc in Actuarial Science',
+            'BSc in Mathematics and Modeling',
+            'BSc in Polymer Chemistry',
             'Diploma in Leather Technology'
           ]
         }
       ],
-      resources: [],
-      events: [
+      resources: [
         {
-          id: 'e1',
-          title: 'Career Fair 2025',
-          date: '2025-11-05',
-          description: 'Meet top employers and explore career opportunities',
-          icon: '💼'
+          id: 'r1',
+          title: 'Data Structures Notes',
+          type: 'notes',
+          school: 'School of Computer Science and IT',
+          program: 'BSc in Computer Science',
+          course: 'Data Structures and Algorithms',
+          code: 'CS201',
+          description: 'Comprehensive notes on data structures including arrays, linked lists, trees, and graphs.',
+          fileName: 'data_structures_notes.pdf',
+          fileSize: '2.4 MB',
+          createdAt: '2025-01-15',
+          downloads: 42
         },
         {
-          id: 'e2',
-          title: 'Tech Hackathon',
-          date: '2025-10-25',
-          description: '48-hour coding competition with amazing prizes',
-          icon: '💻'
+          id: 'r2',
+          title: 'Thermodynamics Slides',
+          type: 'slides',
+          school: 'School of Engineering',
+          program: 'BSc in Mechanical Engineering',
+          course: 'Thermodynamics',
+          code: 'ME301',
+          description: 'Lecture slides covering the principles of thermodynamics.',
+          fileName: 'thermodynamics_slides.pptx',
+          fileSize: '5.7 MB',
+          createdAt: '2025-02-10',
+          downloads: 28
         },
         {
-          id: 'e3',
-          title: 'Research Symposium',
-          date: '2025-09-15',
-          description: 'Present your innovative research projects',
-          icon: '🔬'
+          id: 'r3',
+          title: 'Financial Accounting Past Papers',
+          type: 'past-papers',
+          school: 'School of Business Management and Economics',
+          program: 'BSc in Commerce',
+          course: 'Financial Accounting',
+          code: 'ACC101',
+          description: 'Collection of past exam papers from 2018-2024.',
+          fileName: 'financial_accounting_papers.zip',
+          fileSize: '3.2 MB',
+          createdAt: '2025-01-22',
+          downloads: 67
+        },
+        {
+          id: 'r4',
+          title: 'Organic Chemistry Textbook',
+          type: 'books',
+          school: 'School of Science',
+          program: 'BSc in Industrial Chemistry',
+          course: 'Organic Chemistry',
+          code: 'CHEM202',
+          description: 'Recommended textbook for organic chemistry course.',
+          fileName: 'organic_chemistry_textbook.pdf',
+          fileSize: '15.8 MB',
+          createdAt: '2025-03-05',
+          downloads: 35
         }
-      ]
+      ],
+      currentFilter: 'all',
+      currentCourse: null
     };
 
     // Get resource type icon
@@ -1027,10 +1143,11 @@
         </div>
         <div class="resource-list">
           ${school.programs.map(program => `
-            <div class="resource-item" style="cursor: pointer;">
+            <div class="resource-item" style="cursor: pointer;" onclick="showProgramResources('${program}')">
               <div class="resource-icon">🎓</div>
               <div class="resource-content">
                 <div class="resource-title">${program}</div>
+                <div class="resource-meta">${getProgramResourcesCount(program)} resources available</div>
               </div>
             </div>
           `).join('')}
@@ -1040,21 +1157,79 @@
       modal.classList.add('show');
     }
 
-    // Render all programs
-    function renderPrograms() {
-      const grid = document.getElementById('programsGrid');
-      grid.innerHTML = '';
+    // Get program resources count
+    function getProgramResourcesCount(program) {
+      return DATA.resources.filter(resource => resource.program === program).length;
+    }
+
+    // Show program resources
+    function showProgramResources(program) {
+      DATA.currentCourse = program;
+      document.getElementById('courseResourcesTitle').textContent = `${program} Resources`;
       
-      DATA.schools.forEach(school => {
-        school.programs.forEach(program => {
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.innerHTML = `
-            <h3>🎓 ${program}</h3>
-            <p>${school.name}</p>
-          `;
-          grid.appendChild(card);
-        });
+      // Hide other sections, show course resources
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById('courseResourcesSection').style.display = 'block';
+      
+      renderCourseResources();
+      closeModal('schoolModal');
+    }
+
+    // Render course resources
+    function renderCourseResources() {
+      const list = document.getElementById('courseResourcesList');
+      list.innerHTML = '';
+      
+      const resources = DATA.resources.filter(resource => 
+        resource.program === DATA.currentCourse
+      );
+      
+      if (resources.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">📚</div>
+            <h3>No resources yet for this program</h3>
+            <p>Be the first to add a resource!</p>
+            <button class="btn" onclick="openAddModal()">Add Resource</button>
+          </div>
+        `;
+        return;
+      }
+      
+      // Apply filter
+      const filteredResources = DATA.currentFilter === 'all' 
+        ? resources 
+        : resources.filter(resource => resource.type === DATA.currentFilter);
+      
+      if (filteredResources.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <h3>No resources match your filter</h3>
+            <p>Try a different filter or add a resource</p>
+            <button class="btn" onclick="openAddModal()">Add Resource</button>
+          </div>
+        `;
+        return;
+      }
+      
+      filteredResources.forEach(resource => {
+        const item = document.createElement('div');
+        item.className = 'resource-item';
+        item.innerHTML = `
+          <div class="resource-icon">${getResourceIcon(resource.type)}</div>
+          <div class="resource-content">
+            <div class="resource-title">${resource.title}</div>
+            <div class="resource-meta">${resource.course} • ${resource.school} • ${formatDate(resource.createdAt)}</div>
+            <div class="resource-actions">
+              <button class="btn btn-small" onclick="viewResource('${resource.id}')">View</button>
+              <button class="btn-secondary btn-small" onclick="downloadResource('${resource.id}')">Download</button>
+            </div>
+          </div>
+        `;
+        list.appendChild(item);
       });
     }
 
@@ -1075,38 +1250,40 @@
         return;
       }
       
-      DATA.resources.forEach(resource => {
+      // Apply filter
+      const filteredResources = DATA.currentFilter === 'all' 
+        ? DATA.resources 
+        : DATA.resources.filter(resource => resource.type === DATA.currentFilter);
+      
+      if (filteredResources.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <h3>No resources match your filter</h3>
+            <p>Try a different filter or add a resource</p>
+            <button class="btn" onclick="openAddModal()">Add Resource</button>
+          </div>
+        `;
+        return;
+      }
+      
+      filteredResources.forEach(resource => {
         const item = document.createElement('div');
         item.className = 'resource-item';
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => showProgramResources(resource.program));
         item.innerHTML = `
           <div class="resource-icon">${getResourceIcon(resource.type)}</div>
           <div class="resource-content">
             <div class="resource-title">${resource.title}</div>
-            <div class="resource-meta">${resource.course} • ${resource.school}</div>
+            <div class="resource-meta">${resource.course} • ${resource.school} • ${formatDate(resource.createdAt)}</div>
             <div class="resource-actions">
-              <button class="btn btn-small" onclick="viewResource('${resource.id}')">View</button>
-              <button class="btn-secondary btn-small" onclick="downloadResource('${resource.id}')">Download</button>
+              <button class="btn btn-small" onclick="event.stopPropagation(); viewResource('${resource.id}')">View</button>
+              <button class="btn-secondary btn-small" onclick="event.stopPropagation(); downloadResource('${resource.id}')">Download</button>
             </div>
           </div>
         `;
         list.appendChild(item);
-      });
-    }
-
-    // Render events
-    function renderEvents() {
-      const grid = document.getElementById('eventsGrid');
-      grid.innerHTML = '';
-      
-      DATA.events.forEach(event => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <h3>${event.icon} ${event.title}</h3>
-          <p style="color: var(--brand); font-weight: 600; margin-bottom: 8px;">${formatDate(event.date)}</p>
-          <p>${event.description}</p>
-        `;
-        grid.appendChild(card);
       });
     }
 
@@ -1125,10 +1302,8 @@
       
       const sectionMap = {
         'schools': 'schoolsSection',
-        'programs': 'programsSection',
         'resources': 'resourcesSection',
-        'elearning': 'elearningSection',
-        'events': 'eventsSection'
+        'elearning': 'elearningSection'
       };
       
       document.getElementById(sectionMap[tabName]).style.display = 'block';
@@ -1211,7 +1386,6 @@
       
       if (!query) {
         renderSchools();
-        renderPrograms();
         renderResources();
         return;
       }
@@ -1274,14 +1448,16 @@
         resources.forEach(resource => {
           const item = document.createElement('div');
           item.className = 'resource-item';
+          item.style.cursor = 'pointer';
+          item.addEventListener('click', () => showProgramResources(resource.program));
           item.innerHTML = `
             <div class="resource-icon">${getResourceIcon(resource.type)}</div>
             <div class="resource-content">
               <div class="resource-title">${resource.title}</div>
               <div class="resource-meta">${resource.course} • ${resource.school}</div>
               <div class="resource-actions">
-                <button class="btn btn-small">View</button>
-                <button class="btn-secondary btn-small">Download</button>
+                <button class="btn btn-small" onclick="event.stopPropagation(); viewResource('${resource.id}')">View</button>
+                <button class="btn-secondary btn-small" onclick="event.stopPropagation(); downloadResource('${resource.id}')">Download</button>
               </div>
             </div>
           `;
@@ -1300,12 +1476,28 @@
       showNotification('Download started', 'success');
     }
 
+    // Apply resource filter
+    function applyResourceFilter(type) {
+      DATA.currentFilter = type;
+      
+      // Update active filter button
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-type="${type}"]`).classList.add('active');
+      
+      // Re-render resources
+      if (document.getElementById('courseResourcesSection').style.display !== 'none') {
+        renderCourseResources();
+      } else {
+        renderResources();
+      }
+    }
+
     // Initialize app
     function init() {
       renderSchools();
-      renderPrograms();
       renderResources();
-      renderEvents();
       
       // Tab click handlers
       document.querySelectorAll('.tab').forEach(tab => {
@@ -1415,6 +1607,35 @@
           <div class="upload-icon">📁</div>
           <p>Tap to select file or drag & drop</p>
         `;
+      });
+      
+      // Resource filter buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyResourceFilter(btn.dataset.type);
+        });
+      });
+      
+      // Course resource filter buttons
+      document.querySelectorAll('#courseResourceFilters .filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          DATA.currentFilter = btn.dataset.type;
+          
+          // Update active filter button
+          document.querySelectorAll('#courseResourceFilters .filter-btn').forEach(b => {
+            b.classList.remove('active');
+          });
+          btn.classList.add('active');
+          
+          renderCourseResources();
+        });
+      });
+      
+      // Back to resources button
+      document.getElementById('backToResourcesBtn').addEventListener('click', () => {
+        document.getElementById('courseResourcesSection').style.display = 'none';
+        document.getElementById('resourcesSection').style.display = 'block';
+        DATA.currentCourse = null;
       });
       
       showNotification('Welcome to DKUT Resource Centre!', 'success');
