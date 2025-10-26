@@ -22,7 +22,7 @@
             { name: "ADRIAN WAMALWA", regNumber: "E021-01-1276/2025", gender: "MALE", course: "BSC. EEE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING",photoUrl: "https://i.postimg.cc/3wDLv9Ss/Whats-App-Image-2025-10-26-at-11-22-05-AM-1.jpg" },
             { name: "ANN NJERI MWANGI", regNumber: "E021-01-1246/2025", gender: "FEMALE", course: "BSC. EEE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
             { name: "KIPRUTO COLLINS", regNumber: "E021-01-1100/2024", gender: "MALE", course: "BSC. EEE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
-            { name: "PRUDENCE WANJIRU MWANGI", regNumber: "E020-01-0933/2024", gender: "FEMALE", course: "TIE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
+            { name: "PRUDENCE WANJIRU MWANGI", regNumber: "E020-01-0933/2024", gender: "FEMALE", course: "TIE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING", photoUrl: "https://i.postimg.cc/qq8XLMWF/Whats-App-Image-2025-10-26-at-12-50-25-PM.jpg" },
             { name: "MARTIN MAUNDU", regNumber: "E021-01-2059/2023", gender: "MALE", course: "BSC. EEE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
             { name: "BRIAN MURITHI KIMATHI", regNumber: "E020-01-0948/2024", gender: "MALE", course: "TIE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
             { name: "JAMES MUGENDI", regNumber: "E020-01-2450/2025", gender: "MALE", course: "TIE", school: "ELECTRICAL AND ELECTRONIC ENGINEERING" },
@@ -54,7 +54,7 @@
             { name: "MARK MUNENE SILA", regNumber: "E022-01-1343/2025", gender: "MALE", course: "BSC. MECHATRONICS ENGINEERING", school: "MECHATRONICS ENGINEERING" },
             
             // MECHANICAL ENGINEERING
-            { name: "VICTOR KIPKOECH", regNumber: "E023-01-2125/2023", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
+            { name: "VICTOR KIPKOECH", regNumber: "E023-01-2125/2023", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING",photoUrl: "https://i.postimg.cc/y8NcJPYB/Whats-App-Image-2025-10-26-at-1-04-19-PM.jpg" },
             { name: "JOSEPH KAMUU KITHEKA", regNumber: "E023-01-1180/2023", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING",photoUrl: "https://i.postimg.cc/Kj5pYzqF/Whats-App-Image-2025-10-26-at-11-22-05-AM.jpg" },
             { name: "JACKTONE OKAKA", regNumber: "E023-01-1511/2021", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
             { name: "VICTOR NZYAKA", regNumber: "E023-01-1496/2025", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
@@ -63,7 +63,7 @@
             { name: "KIPTOO EDWIN", regNumber: "E023-01-1477/2025", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
             { name: "MUTAHI JOSEPH", regNumber: "E023-01-1412/2025", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING", photoUrl: "https://i.postimg.cc/tT4YcvKV/Whats-App-Image-2025-10-26-at-11-22-08-AM.jpg" },
             { name: "PETER NDUNGU", regNumber: "E023-01-1235/2024", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
-            { name: "BRIAN IRERI", regNumber: "E023-01-1270/2024", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
+            { name: "BRIAN IRERI", regNumber: "E023-01-1270/2024", gender: "MALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING",photoUrl: "https://i.postimg.cc/3RfkmMLD/Whats-App-Image-2025-10-26-at-12-40-10-PM.jpg" },
             { name: "JAEL MUENI", regNumber: "E023-01-1266/2024", gender: "FEMALE", course: "BSC. MECHANICAL ENGINEERING", school: "MECHANICAL ENGINEERING" },
             
             // PROCUREMENT AND LOGISTICS
@@ -194,7 +194,7 @@
             { name: "CYNTHIA NGULA", regNumber: "N001-01-0012/2025", gender: "FEMALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
             { name: "PAUL CHACHA RIOBA", regNumber: "N001-01-2010/2024", gender: "MALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
             { name: "ABIGAIL NYAMWATHI", regNumber: "N001-01-2107/2025", gender: "FEMALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
-            { name: "GEDION MUNTET", regNumber: "N001-01-1975/2024", gender: "MALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
+            { name: "GEDION MUNTET", regNumber: "N001-01-1975/2024", gender: "MALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY",photoUrl: "https://i.postimg.cc/MpRxYkGp/Whats-App-Image-2025-10-26-at-1-07-54-PM.jpg" },
             { name: "SHELMITH WAIRIMU", regNumber: "N001-01-1767/2023", gender: "FEMALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
             { name: "ASACHITA EDITH", regNumber: "N001-01-1980/2024", gender: "FEMALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY", photoUrl: "https://i.postimg.cc/XYvN4B2T/Whats-App-Image-2025-10-26-at-11-22-09-AM.jpg" },
             { name: "TERRYANNE ADHIAMBO", regNumber: "N001-01-0286/2025", gender: "FEMALE", course: "BSC. TOURISM AND HOSPITALITY MANAGEMENT", school: "INSTITUTE OF TOURISM AND HOSPITALITY" },
@@ -270,7 +270,7 @@
             { name: "SAMSON MACHINI", regNumber: "E029-01-1712/2025", gender: "MALE", course: "BED MECHANICAL", school: "TECHNOLOGY EDUCATION" },
             { name: "JOYCE WANJIRU", regNumber: "E033-01-1699/2024", gender: "FEMALE", course: "BED CIVIL", school: "TECHNOLOGY EDUCATION" },
             { name: "YVONNE MAKENA", regNumber: "E033-01-0739/2025", gender: "FEMALE", course: "BED CIVIL", school: "TECHNOLOGY EDUCATION" },
-            { name: "MORGAN OLAGO", regNumber: "E033-01-1856/2025", gender: "MALE", course: "BED CIVIL", school: "TECHNOLOGY EDUCATION" },
+            { name: "MORGAN OLAGO", regNumber: "E033-01-1856/2025", gender: "MALE", course: "BED CIVIL", school: "TECHNOLOGY EDUCATION",photoUrl: "https://i.postimg.cc/cH7rkg4D/Whats-App-Image-2025-10-26-at-1-05-01-PM.jpg" },
             { name: "ENOCK OMBASA", regNumber: "E029-01-1727/2025", gender: "MALE", course: "BED MECHANICAL", school: "TECHNOLOGY EDUCATION" },
             { name: "BENTA AKEYO", regNumber: "E033-01-1867/2025", gender: "FEMALE", course: "BED CIVIL", school: "TECHNOLOGY EDUCATION" },
             { name: "EVELYNE KAVILE KINYILI", regNumber: "E028-01-1339/2023", gender: "FEMALE", course: "BED EEE", school: "TECHNOLOGY EDUCATION" },
