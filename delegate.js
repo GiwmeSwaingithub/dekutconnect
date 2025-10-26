@@ -90,7 +90,7 @@
             
             // BACHELOR OF ACCOUNTING AND FINANCE
             { name: "ANTONY KIOKO WAMBUA", regNumber: "B010-01-0439/2023", gender: "MALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE" },
-            { name: "BETTY JOAN WANJIRU", regNumber: "B010-01-0449/2023", gender: "FEMALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE" },
+            { name: "BETTY JOAN WANJIRU", regNumber: "B010-01-0449/2023", gender: "FEMALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE",photoUrl: "https://i.postimg.cc/BbbWRkcd/Whats-App-Image-2025-10-26-at-11-50-45-AM.jpg" },
             { name: "MAINA PEACE", regNumber: "B010-01-0517/2025", gender: "FEMALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE" },
             { name: "ELVIN OMONDI", regNumber: "B010-01-0658/2025", gender: "MALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE" },
             { name: "DIPORAH CHEBET", regNumber: "B010-01-0597/2025", gender: "FEMALE", course: "BACHELOR OF COMMERCE", school: "BACHELOR OF ACCOUNTING AND FINANCE" },
