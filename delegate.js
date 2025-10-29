@@ -132,7 +132,7 @@
             { name: "KINYUA BRIAN NJOROGE", regNumber: "C025-01-2691/2024", gender: "MALE", course: "BSC. INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
             { name: "DANIEL MWANZIA", regNumber: "C025-01-0823/2025", gender: "MALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
             { name: "LEVIS OUMA", regNumber: "C027-01-1070/2025", gender: "MALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY",photoUrl: "https://i.postimg.cc/kMcYBnGK/Whats-App-Image-2025-10-26-at-2-20-26-PM.jpg" },
-            { name: "CARLOS KIPRUTO BIRECH", regNumber: "C027-01-2589/2025", gender: "MALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
+            { name: "CARLOS KIPRUTO BIRECH", regNumber: "C027-01-2589/2025", gender: "MALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY",photoUrl: "https://i.postimg.cc/CKjDKsST/Whats-App-Image-2025-10-26-at-3-00-39-PM.jpg" },
             { name: "JOY GATHONI", regNumber: "C027-01-0789/2023", gender: "FEMALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
             { name: "NZWU STEPHEN", regNumber: "C027-01-1027/2025", gender: "MALE", course: "BS. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
             { name: "HILLARY KIPTOO", regNumber: "C027-01-0900/20-2024", gender: "MALE", course: "BSC. BUSINESS INFORMATION TECHNOLOGY", school: "INFORMATION TECHNOLOGY" },
